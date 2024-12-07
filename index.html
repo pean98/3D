@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="css/memo.css">
+    <script src="https://www.gstatic.com/firebasejs/8.10.0/firebase-app.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/8.10.0/firebase-firestore.js"></script>
+    <title>디지털 가공실 출입대장</title>
+</head>
+<body>
+    <div id="entry-container">
+        <h2>디지털 가공실 출입대장</h2>
+        <form id="entry-form">
+            <label for="name-input">이름</label>
+            <input type="text" id="name-input" placeholder="이름을 입력하세요" required>
+            <label for="action-select">행동 선택</label>
+            <select id="action-select">
+                <option value="in">입장</option>
+                <option value="out">퇴장</option>
+            </select>
+            <div id="safety-check-container">
+                <input type="checkbox" id="safety-check">
+                <label for="safety-check">3D프린터 안전 교육을 이수했습니다.</label>
+            </div>
+            <button type="button" id="submit-btn">기록</button>
+        </form>
+
+        <table id="logs-table">
+            <thead>
+                <tr>
+                    <th>이름</th>
+                    <th>입장 시간</th>
+                    <th>퇴장 시간</th>
+                    <th>안전교육 이수 여부</th>
+                </tr>
+            </thead>
+            <tbody id="logs-table-body"></tbody>
+        </table>
+    </div>
+    <script src="js/memo.js"></script>
+</body>
+</html>
